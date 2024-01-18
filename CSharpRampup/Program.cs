@@ -90,6 +90,9 @@ namespace CSharpRampup
                            "Together, these legendary champions embarked on a quest to restore balance to Runeterra, facing formidable foes, uncovering ancient artifacts, and shaping the fate of the Great League of Legends.";
 
             Console.WriteLine(story);
+            Console.WriteLine("=====================================");
+
+            Console.WriteLine("Part 2");
 
             Console.Write("Enter a number:");
             int n = Convert.ToInt32(Console.ReadLine());
@@ -108,8 +111,48 @@ namespace CSharpRampup
                 }
                 Console.WriteLine();
             }
-
             
+            Console.Write("Enter a number: ");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            if (n <= 0)
+            {
+                Console.WriteLine("Invalid input");
+                return;
+            }
+            
+            long sum = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                sum += i;
+                Console.Write(i);
+                if (i < n)
+                {
+                    Console.Write(" + ");
+                }
+            }
+            
+            Console.WriteLine(" = " + sum);
+            
+            Console.Write("Enter a number: ");
+            string input = Console.ReadLine();
+
+            if (int.TryParse(input, out int num) && num > 0)
+            {
+                for (int i = num; i > 0; i--)
+                {
+                    for (int j = 1; j <= i; j++)
+                    {
+                        Console.Write(j + " ");
+                    }
+                    Console.WriteLine();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid input");
+            }
+
         }
     }
 }
